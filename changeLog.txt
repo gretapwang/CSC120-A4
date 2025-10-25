@@ -1,0 +1,4 @@
+- fixed bug in go() that allowed fuel level to be made negative
+- fixed bug in addPassenger() that allowed passengers to board multiple times
+- added @param to Javadoc comment for main() in Train.java
+- fixed spacing of curly braces on if-else statements 

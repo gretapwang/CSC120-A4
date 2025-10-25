@@ -36,16 +36,15 @@ public class Car implements CarRequirements {
     }
 
     /**
-     * Adds a Passenger to passengers list and returns true, or returns false if no seat available
+     * Adds a Passenger to passengers list and returns true, or returns false if no seat available or the Passenger is already onboard
      * @param p Passenger to be added
-     * @return True if there was space to add passenger, false otherwise
+     * @return True if Passenger was successfully added, false otherwise
      */
     public Boolean addPassenger(Passenger p){
-        if (this.seatsRemaining() > 0){
+        if (this.seatsRemaining() > 0 && !this.passengers.contains(p)){
             this.passengers.add(p);
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -59,8 +58,7 @@ public class Car implements CarRequirements {
         if (this.passengers.contains(p)){
             this.passengers.remove(p);
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -71,8 +69,7 @@ public class Car implements CarRequirements {
     public void printManifest(){
         if (this.passengers.isEmpty()){
             System.out.println("This car is EMPTY.");
-        }
-        else {
+        } else {
             for (int i=0; i < this.passengers.size(); i++){
                 System.out.print(this.passengers.get(i));
                 if (i < this.passengers.size() - 1){

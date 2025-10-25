@@ -16,15 +16,14 @@ public class Passenger implements PassengerRequirements {
     }
 
     /**
-     * Adds Passenger to a Car, or prints error message is Car is full
+     * Adds Passenger to a Car, or prints error message if Car is full or Passenger is already on
      * @param c Car to board
      */
     public void boardCar(Car c){
         if (c.addPassenger(this)){
             System.out.println(this + " has boarded!");
-        }
-        else {
-            System.out.println("This car is full. " + this + " cannot board.");
+        } else {
+            System.out.println(this + " was unable to board.");
         }
     }
 
@@ -35,8 +34,7 @@ public class Passenger implements PassengerRequirements {
     public void getOffCar(Car c){
         if (c.removePassenger(this)){
             System.out.println(this + " has left the car.");
-        }
-        else {
+        } else {
             System.out.println(this + " was not aboard.");
         }
     }

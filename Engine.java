@@ -54,11 +54,15 @@ public class Engine implements EngineRequirements {
     } 
 
     /**
-     * Decreases fuel level by 20, prints remaining fuel level, returns true if there is fuel remaining and false otherwise
+     * Decreases fuel level by up to 20 as available, prints remaining fuel level, returns true if there is fuel remaining and false otherwise
      * @return true if remaining fuel is positive, false otherwise
      */
     public Boolean go(){
-        this.currentFuel -= 20;
+        if (this.currentFuel >= 20){
+            this.currentFuel -= 20;
+        } else {
+            this.currentFuel = 0;
+        }
         System.out.println("Remaining fuel: " + this.currentFuel);
         return this.currentFuel > 0;
     }

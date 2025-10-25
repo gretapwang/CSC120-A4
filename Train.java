@@ -75,6 +75,7 @@ public class Train implements TrainRequirements {
 
     /**
      * Tests functionality of Train, Car, Engine, and Passenger classes
+     * @param args Command line arguments (ignored)
      */
     public static void main(String[] args){
 
@@ -114,6 +115,7 @@ public class Train implements TrainRequirements {
         // Test errors when boarding/leaving
         kayla.boardCar(train.getCar(0));
         kayla.getOffCar(train.getCar(0));
+        greta.boardCar(train.getCar(0));
 
 
     }
